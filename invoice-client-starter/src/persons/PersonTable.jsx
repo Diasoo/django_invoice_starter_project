@@ -20,7 +20,6 @@
  * Více informací na http://www.itnetwork.cz/licence
  */
 
-import React from "react";
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 

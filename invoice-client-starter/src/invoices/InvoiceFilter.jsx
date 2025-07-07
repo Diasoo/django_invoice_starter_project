@@ -1,4 +1,3 @@
-import React from "react";
 import InputSelect from "../components/InputSelect.jsx";
 import InputField from "../components/InputField.jsx";
 import PropTypes from "prop-types";

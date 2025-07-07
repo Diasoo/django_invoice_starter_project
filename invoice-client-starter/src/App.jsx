@@ -20,7 +20,6 @@
  * Více informací na http://www.itnetwork.cz/licence
  */
 
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   BrowserRouter as Router,

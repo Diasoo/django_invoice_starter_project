@@ -20,7 +20,7 @@
  * Více informací na http://www.itnetwork.cz/licence
  */
 
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 
 import {apiDelete, apiGet} from "../utils/api";
 import Loader from "../components/Loader.jsx";

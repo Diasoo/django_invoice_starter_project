@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {apiDelete, apiGet} from "../utils/api.js";
 import InvoiceTable from "./InvoiceTable.jsx";
 import PropTypes from "prop-types";
