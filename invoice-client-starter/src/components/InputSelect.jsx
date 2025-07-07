@@ -48,14 +48,14 @@ export function InputSelect(props) {
 }
 
 InputSelect.propTypes = {
-  name: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  prompt: PropTypes.string.isRequired,
-  items: PropTypes.array.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-  multiple: PropTypes.bool,
-  required: PropTypes.bool,
+    name: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    prompt: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired,
+    handleChange: PropTypes.func.isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+    multiple: PropTypes.bool,
+    required: PropTypes.bool,
 };
 
 export default InputSelect;

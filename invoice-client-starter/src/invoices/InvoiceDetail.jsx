@@ -17,7 +17,7 @@ const InvoiceDetail = () => {
             .finally(() => setIsLoading(false));
     }, [id]);
 
-    if (isLoading) return <Loader />;
+    if (isLoading) return <Loader/>;
 
     return (
         <div className="container py-4">
@@ -28,39 +28,39 @@ const InvoiceDetail = () => {
                     <h3 className="card-title">
                         Faktura č. {invoice.invoiceNumber}
                     </h3>
-                    <hr />
+                    <hr/>
 
                     <div className="row">
                         <div className="col-md-6 mb-3">
-                            <strong>Datum vystavení:</strong><br />
+                            <strong>Datum vystavení:</strong><br/>
                             {dateStringFormatter(invoice.issued)}
                         </div>
                         <div className="col-md-6 mb-3">
-                            <strong>Datum splatnosti:</strong><br />
+                            <strong>Datum splatnosti:</strong><br/>
                             {dateStringFormatter(invoice.dueDate)}
                         </div>
                         <div className="col-md-6 mb-3">
-                            <strong>Produkt:</strong><br />
+                            <strong>Produkt:</strong><br/>
                             {invoice.product || <span className="text-muted">—</span>}
                         </div>
                         <div className="col-md-6 mb-3">
-                            <strong>Cena (bez DPH):</strong><br />
+                            <strong>Cena (bez DPH):</strong><br/>
                             {invoice.price} Kč
                         </div>
                         <div className="col-md-6 mb-3">
-                            <strong>DPH:</strong><br />
+                            <strong>DPH:</strong><br/>
                             {invoice.vat} Kč
                         </div>
                         <div className="col-md-12 mb-3">
-                            <strong>Poznámka:</strong><br />
+                            <strong>Poznámka:</strong><br/>
                             {invoice.note || <span className="text-muted">—</span>}
                         </div>
                         <div className="col-md-6 mb-3">
-                            <strong>Kupující:</strong><br />
+                            <strong>Kupující:</strong><br/>
                             {invoice.buyer?.name || <span className="text-muted">—</span>}
                         </div>
                         <div className="col-md-6 mb-3">
-                            <strong>Prodávající:</strong><br />
+                            <strong>Prodávající:</strong><br/>
                             {invoice.seller?.name || <span className="text-muted">—</span>}
                         </div>
                     </div>

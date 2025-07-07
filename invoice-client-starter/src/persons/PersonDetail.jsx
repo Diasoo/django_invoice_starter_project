@@ -20,17 +20,17 @@
  * Více informací na http://www.itnetwork.cz/licence
  */
 
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
 import Country from "./Country";
-import { apiGet } from "../utils/api.js";
+import {apiGet} from "../utils/api.js";
 import Loader from "../components/Loader.jsx";
 
 import BuyerSellerInvoice from "../invoices/BuyerSellerInvoice.jsx";
 
 const PersonDetail = () => {
     const [isLoading, setIsLoading] = useState(true);
-    const { id } = useParams();
+    const {id} = useParams();
     const [person, setPerson] = useState({});
     const [showSellerInvoices, setShowSellerInvoices] = useState(false);
     const [showBuyerInvoices, setShowBuyerInvoices] = useState(false);
@@ -39,11 +39,11 @@ const PersonDetail = () => {
         apiGet("/api/persons/" + id)
             .then((data) => setPerson(data))
             .catch((error) => console.log(error))
-            .finally(() => setIsLoading(false));;
+            .finally(() => setIsLoading(false));
     }, [id]);
     const country = Country.CZECHIA === person.country ? "Česká republika" : "Slovensko";
 
-    if (isLoading) return <Loader />;
+    if (isLoading) return <Loader/>;
 
     return (
         <div className="container py-4">
@@ -53,31 +53,31 @@ const PersonDetail = () => {
                     <h3 className="card-title">
                         {person.name} <small className="text-muted">({person.identificationNumber})</small>
                     </h3>
-                    <hr />
+                    <hr/>
                     <div className="row">
                         <div className="col-md-6 mb-3">
-                            <strong>DIČ:</strong><br />
+                            <strong>DIČ:</strong><br/>
                             {person.taxNumber || <span className="text-muted">—</span>}
                         </div>
                         <div className="col-md-6 mb-3">
-                            <strong>Bankovní účet:</strong><br />
-                            {person.accountNumber}/{person.bankCode} <br />
+                            <strong>Bankovní účet:</strong><br/>
+                            {person.accountNumber}/{person.bankCode} <br/>
                             <small className="text-muted">{person.iban}</small>
                         </div>
                         <div className="col-md-6 mb-3">
-                            <strong>Tel.:</strong><br />
+                            <strong>Tel.:</strong><br/>
                             {person.telephone || <span className="text-muted">—</span>}
                         </div>
                         <div className="col-md-6 mb-3">
-                            <strong>Mail:</strong><br />
+                            <strong>Mail:</strong><br/>
                             {person.mail || <span className="text-muted">—</span>}
                         </div>
                         <div className="col-md-12 mb-3">
-                            <strong>Sídlo:</strong><br />
+                            <strong>Sídlo:</strong><br/>
                             {person.street}, {person.city}, {person.zip}, {country}
                         </div>
                         <div className="col-md-12">
-                            <strong>Poznámka:</strong><br />
+                            <strong>Poznámka:</strong><br/>
                             {person.note || <span className="text-muted">—</span>}
                         </div>
                     </div>

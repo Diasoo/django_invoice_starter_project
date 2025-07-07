@@ -26,7 +26,6 @@ import {apiDelete, apiGet} from "../utils/api";
 import Loader from "../components/Loader.jsx";
 
 import PersonTable from "./PersonTable";
-import PersonStatistics from "./PersonStatistics.jsx";
 
 const PersonIndex = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -49,7 +48,7 @@ const PersonIndex = () => {
             .finally(() => setIsLoading(false));
     }, []);
 
-    if (isLoading) return <Loader />;
+    if (isLoading) return <Loader/>;
 
     return (
         <div className="container py-4">
@@ -60,9 +59,6 @@ const PersonIndex = () => {
                     items={persons}
                     label="Počet osob:"
                 />
-            </div>
-            <div className="mt-4">
-                <PersonStatistics />
             </div>
         </div>
     );

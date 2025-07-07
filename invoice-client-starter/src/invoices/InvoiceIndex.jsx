@@ -45,7 +45,7 @@ const InvoiceIndex = () => {
             });
         } else {
             setFilter(prevState => {
-                return { ...prevState, [e.target.name]: e.target.value}
+                return {...prevState, [e.target.name]: e.target.value}
             });
         }
     };
@@ -57,7 +57,7 @@ const InvoiceIndex = () => {
         setInvoices(data);
     };
 
-    if (isLoading) return <Loader />;
+    if (isLoading) return <Loader/>;
 
     return (
         <div className="container py-4">
@@ -90,7 +90,7 @@ const InvoiceIndex = () => {
 
             {showStatistics && (
                 <div className="bg-white rounded shadow-sm p-4">
-                    <InvoiceStatistics />
+                    <InvoiceStatistics/>
                 </div>
             )}
         </div>

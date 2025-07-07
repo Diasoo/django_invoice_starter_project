@@ -96,12 +96,12 @@ const InvoiceFilter = (props) => {
         </form>
     );
 }
-    InvoiceFilter.propTypes = {
-        personList: PropTypes.array.isRequired,
-        filter: PropTypes.object.isRequired,
-        handleChange: PropTypes.func.isRequired,
-        handleSubmit: PropTypes.func.isRequired,
-        confirm: PropTypes.string
+InvoiceFilter.propTypes = {
+    personList: PropTypes.array.isRequired,
+    filter: PropTypes.object.isRequired,
+    handleChange: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    confirm: PropTypes.string
 };
 
 export default InvoiceFilter;

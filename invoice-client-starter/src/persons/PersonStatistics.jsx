@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
 import {apiGet} from "../utils/api.js";
 import Loader from "../components/Loader.jsx";
@@ -15,7 +15,7 @@ const PersonStatistics = () => {
     }, []);
 
     if (isLoading) {
-        return <Loader />;
+        return <Loader/>;
     }
 
     return (
@@ -25,7 +25,7 @@ const PersonStatistics = () => {
                 <ul className="list-group list-group-flush">
                     {statistics.map((stat) => (
                         <li key={stat.PersonId} className="list-group-item bg-light">
-                            <strong>{stat.personName}:</strong><br />
+                            <strong>{stat.personName}:</strong><br/>
                             Příjmy: {stat.revenue}
                         </li>
                     ))}

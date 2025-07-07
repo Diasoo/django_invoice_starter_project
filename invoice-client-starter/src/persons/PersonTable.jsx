@@ -33,9 +33,9 @@ const PersonTable = ({label, items, deletePerson}) => {
             <table className="table table-striped table-bordered align-middle shadow-sm">
                 <thead className="table-light">
                 <tr>
-                    <th style={{ width: "5%" }}>#</th>
-                    <th style={{ width: "45%" }}>Jméno</th>
-                    <th style={{ width: "50%" }}>Akce</th>
+                    <th style={{width: "5%"}}>#</th>
+                    <th style={{width: "45%"}}>Jméno</th>
+                    <th style={{width: "50%"}}>Akce</th>
                 </tr>
                 </thead>
                 <tbody>

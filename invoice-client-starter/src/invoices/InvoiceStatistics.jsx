@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
 import {apiGet} from "../utils/api.js";
 
@@ -21,15 +21,15 @@ const InvoiceStatistics = () => {
                 <h1 className="card-title mb-4">📊 Statistiky faktur</h1>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item bg-light">
-                        <strong>Celkový součet faktur za tento rok:</strong><br />
+                        <strong>Celkový součet faktur za tento rok:</strong><br/>
                         {statistics.currentYearSum} Kč
                     </li>
                     <li className="list-group-item bg-light">
-                        <strong>Celkový součet faktur za celou dobu:</strong><br />
+                        <strong>Celkový součet faktur za celou dobu:</strong><br/>
                         {statistics.allTimeSum} Kč
                     </li>
                     <li className="list-group-item bg-light">
-                        <strong>Počet vystavených faktur:</strong><br />
+                        <strong>Počet vystavených faktur:</strong><br/>
                         {statistics.invoicesCount}
                     </li>
                 </ul>

@@ -21,14 +21,7 @@
  */
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import {BrowserRouter as Router, Link, Navigate, NavLink, Route, Routes,} from "react-router-dom";
 
 import PersonIndex from "./persons/PersonIndex";
 import PersonDetail from "./persons/PersonDetail";
@@ -36,60 +29,73 @@ import PersonForm from "./persons/PersonForm";
 import InvoiceForm from "./invoices/InvoiceForm.jsx";
 import InvoiceIndex from "./invoices/InvoiceIndex.jsx";
 import InvoiceDetail from "./invoices/InvoiceDetail.jsx";
+import PersonStatistics from "./persons/PersonStatistics.jsx";
 
 export function App() {
-  return (
-      <Router>
-        <div className="container py-3">
-          <nav className="navbar bg-light rounded shadow-sm px-3 mb-4">
-            <div className="d-flex align-items-center gap-4">
-              <Link to="/" className="navbar-brand fw-bold mb-0 h1">
-                Fakturace
-              </Link>
-              <ul className="nav nav-pills">
-                <li className="nav-item">
-                  <NavLink
-                      to="/persons"
-                      className={({ isActive }) =>
-                          "nav-link" + (isActive ? " active" : "")
-                      }
-                  >
-                    Osoby
-                  </NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink
-                      to="/invoices"
-                      className={({ isActive }) =>
-                          "nav-link" + (isActive ? " active" : "")
-                      }
-                  >
-                    Faktury
-                  </NavLink>
-                </li>
-              </ul>
+    return (
+        <Router>
+            <div className="container py-3">
+                <nav className="navbar bg-light rounded shadow-sm px-3 mb-4">
+                    <div className="d-flex align-items-center gap-4">
+                        <Link to="/" className="navbar-brand fw-bold mb-0 h1">
+                            Fakturace
+                        </Link>
+                        <ul className="nav nav-pills">
+                            <li className="nav-item">
+                                <NavLink
+                                    to="/persons"
+                                    end
+                                    className={({isActive}) =>
+                                        "nav-link" + (isActive ? " active" : "")
+                                    }
+                                >
+                                    Osoby
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink
+                                    to="/invoices"
+                                    className={({isActive}) =>
+                                        "nav-link" + (isActive ? " active" : "")
+                                    }
+                                >
+                                    Faktury
+                                </NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink
+                                    to="/persons/statistics"
+                                    className={({isActive}) =>
+                                        "nav-link" + (isActive ? " active" : "")
+                                    }
+                                >
+                                    Statistiky osob
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+
+                <Routes>
+                    <Route index element={<Navigate to={"/persons"}/>}/>
+                    <Route path="/persons">
+                        <Route index element={<PersonIndex/>}/>
+                        <Route path="show/:id" element={<PersonDetail/>}/>
+                        <Route path="create" element={<PersonForm/>}/>
+                        <Route path="edit/:id" element={<PersonForm/>}/>
+                        <Route path="statistics" element={<PersonStatistics/>}/>
+                    </Route>
+                    <Route path="/invoices">
+                        <Route index element={<InvoiceIndex/>}/>
+                        <Route path="show/:id" element={<InvoiceDetail/>}/>
+                        <Route path="create" element={<InvoiceForm/>}/>
+                        <Route path="edit/:id" element={<InvoiceForm/>}/>
+                    </Route>
+                </Routes>
             </div>
-          </nav>
-
-
-          <Routes>
-            <Route index element={<Navigate to={"/persons"} />} />
-            <Route path="/persons">
-              <Route index element={<PersonIndex />} />
-              <Route path="show/:id" element={<PersonDetail />} />
-              <Route path="create" element={<PersonForm />} />
-              <Route path="edit/:id" element={<PersonForm />} />
-            </Route>
-            <Route path="/invoices">
-              <Route index element={<InvoiceIndex />} />
-              <Route path="show/:id" element={<InvoiceDetail />} />
-              <Route path="create" element={<InvoiceForm />} />
-              <Route path="edit/:id" element={<InvoiceForm />} />
-            </Route>
-          </Routes>
-        </div>
-      </Router>
-  );
+        </Router>
+    );
 }
 
 export default App;

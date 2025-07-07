@@ -1,4 +1,5 @@
 import {useNavigate, useParams} from "react-router-dom";
+import {useEffect, useState} from "react";
 
 import {apiGet, apiPost, apiPut} from "../utils/api";
 import Loader from "../components/Loader.jsx";
@@ -49,8 +50,8 @@ const InvoiceForm = () => {
 
         const payload = {
             ...invoice,
-            buyer: { _id: Number(invoice.buyer) },
-            seller: { _id: Number(invoice.seller) }
+            buyer: {_id: Number(invoice.buyer)},
+            seller: {_id: Number(invoice.seller)}
         };
 
         console.log("Odesílám data na server:", payload);
@@ -71,7 +72,7 @@ const InvoiceForm = () => {
     const sent = sentState;
     const success = successState;
 
-    if (isLoading) return <Loader />;
+    if (isLoading) return <Loader/>;
 
     return (
         <div className="container py-4">
@@ -190,7 +191,7 @@ const InvoiceForm = () => {
                         prompt="Zadejte poznámku"
                         value={invoice.note}
                         handleChange={(e) =>
-                            setInvoice({ ...invoice, note: e.target.value })
+                            setInvoice({...invoice, note: e.target.value})
                         }
                     />
                 </div>
@@ -205,7 +206,7 @@ const InvoiceForm = () => {
                             items={persons}
                             value={invoice.buyer}
                             handleChange={(e) =>
-                                setInvoice({ ...invoice, buyer: e.target.value })
+                                setInvoice({...invoice, buyer: e.target.value})
                             }
                         />
                     </div>
@@ -218,7 +219,7 @@ const InvoiceForm = () => {
                             items={persons}
                             value={invoice.seller}
                             handleChange={(e) =>
-                                setInvoice({ ...invoice, seller: e.target.value })
+                                setInvoice({...invoice, seller: e.target.value})
                             }
                         />
                     </div>

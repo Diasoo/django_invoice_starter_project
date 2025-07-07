@@ -1,15 +1,15 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 
-const InvoiceTable = ({ items, deleteInvoice }) => {
+const InvoiceTable = ({items, deleteInvoice}) => {
     return (
         <div className="table-responsive">
             <table className="table table-striped table-bordered align-middle shadow-sm">
                 <thead className="table-light">
                 <tr>
-                    <th style={{ width: "5%" }}>#</th>
-                    <th style={{ width: "35%" }}>Číslo faktury</th>
-                    <th style={{ width: "60%" }}>Akce</th>
+                    <th style={{width: "5%"}}>#</th>
+                    <th style={{width: "35%"}}>Číslo faktury</th>
+                    <th style={{width: "60%"}}>Akce</th>
                 </tr>
                 </thead>
                 <tbody>
