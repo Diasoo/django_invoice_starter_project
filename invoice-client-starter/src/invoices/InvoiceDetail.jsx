@@ -49,7 +49,7 @@ const InvoiceDetail = () => {
                         </div>
                         <div className="col-md-6 mb-3">
                             <strong>DPH:</strong><br/>
-                            {invoice.vat} Kč
+                            {invoice.vat}%
                         </div>
                         <div className="col-md-12 mb-3">
                             <strong>Poznámka:</strong><br/>
