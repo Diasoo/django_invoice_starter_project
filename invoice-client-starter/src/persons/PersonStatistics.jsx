@@ -22,7 +22,7 @@ const PersonStatistics = () => {
         <div className="card shadow-sm p-4 bg-light">
             <div className="card-body">
                 <h1 className="card-title mb-4">📊 Statistiky osob</h1>
-                <ul className="list-group list-group-flush">
+                <ul className="list-group">
                     {statistics.map((stat) => (
                         <li key={stat.PersonId} className="list-group-item bg-light">
                             <strong>{stat.personName}:</strong><br/>

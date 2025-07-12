@@ -1,5 +1,3 @@
-import PropTypes from "prop-types";
-
 export function InputSelect(props) {
     const multiple = props.multiple;
     const required = props.required || false;
@@ -46,16 +44,5 @@ export function InputSelect(props) {
         </div>
     );
 }
-
-InputSelect.propTypes = {
-    name: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    prompt: PropTypes.string.isRequired,
-    items: PropTypes.array.isRequired,
-    handleChange: PropTypes.func.isRequired,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-    multiple: PropTypes.bool,
-    required: PropTypes.bool,
-};
 
 export default InputSelect;

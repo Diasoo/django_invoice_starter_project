@@ -37,7 +37,7 @@ export function App() {
             <div className="container py-3">
                 <nav className="navbar bg-light rounded shadow-sm px-3 mb-4">
                     <div className="d-flex align-items-center gap-4">
-                        <Link to="/" className="navbar-brand fw-bold mb-0 h1">
+                        <Link to="/" className="navbar-brand fw-bold">
                             Fakturace
                         </Link>
                         <ul className="nav nav-pills">
