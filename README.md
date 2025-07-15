@@ -1,6 +1,6 @@
 # Django Invoice Project
 
-Tento projekt vznikl jako součást kurzu od ITnetwork. Jedná se o webovou aplikaci pro správu faktur postavenou na Django REST Frameworku a Reactu. Umožňuje evidenci faktur a firem, včetně filtrování a základních statistik.
+Tento projekt vznikl jako součást kurzu od [ITnetwork.cz](https://www.itnetwork.cz/). Jedná se o webovou aplikaci pro správu faktur postavenou na Django REST Frameworku a Reactu. Umožňuje evidenci faktur a firem, včetně filtrování a základních statistik.
 
 ## 🚀 Funkce
 
